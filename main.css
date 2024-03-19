@@ -1,0 +1,21 @@
+/* Custom CSS styles for Golf Scorecard */
+
+body {
+  background-color: #f0f0f0;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+#header {
+  text-align: center;
+}
+
+#options-container {
+  margin-bottom: 20px;
+}
+
+.table-responsive {
+  margin-bottom: 20px;
+}

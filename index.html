@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golf Scorecard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto">
+    <div class="mb-6 text-center">
+      <h1 class="text-3xl font-bold">Golf Scorecard App</h1>
+    </div>
+    <div class="mb-6">
+      <div id="options-container">
+        <div class="mb-4">
+          <label for="course-select" class="block">Select Course</label>
+          <select class="form-select" id="course-select"></select>
+        </div>
+        <div class="mb-4">
+          <label for="tee-box-select" class="block">Select Tee Box</label>
+          <select class="form-select" id="tee-box-select"></select>
+        </div>
+      </div>
+    </div>
+    <div id="scorecard-container">
+      <div id="scorecard">
+        <div class="mb-6">
+          <table class="w-full table-auto border-collapse border border-gray-400">
+            <thead class="bg-gray-200">
+              <tr>
+                <th>Hole</th>
+                <!-- Front nine holes will be dynamically generated here -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Front nine holes will be dynamically generated here -->
+            </tbody>
+          </table>
+        </div>
+        <div class="mb-6">
+          <table class="w-full table-auto border-collapse border border-gray-400">
+            <thead class="bg-gray-200">
+              <tr>
+                <th>Hole</th>
+                <!-- Back nine holes will be dynamically generated here -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Back nine holes will be dynamically generated here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
