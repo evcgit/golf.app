@@ -23,15 +23,13 @@ function populateCourseSelect() {
 }
 
 function getAvailableGolfCourses() {
-  return fetch(
-    "https://exquisite-pastelito-9d4dd1.netlify.app/golfapi/courses.json",
-  { mode: "no-cors" }
-  ).then(function (response) {
-    return response.json();
-  });
+  return fetch("https://exquisite-pastelito-9d4dd1.netlify.app/golfapi/courses.json")
+    .then(function (response) {
+      return response.json();
+    });
 }
 
-// Function to populate tee box select box
+
 function populateTeeBoxSelect() {
   let teeBoxSelectHtml = '';
   teeBoxes.forEach(function (teeBox, index) {
@@ -40,6 +38,56 @@ function populateTeeBoxSelect() {
   document.getElementById('tee-box-select').innerHTML = teeBoxSelectHtml;
 }
 
-// Call functions to populate select boxes
+
 populateCourseSelect();
 populateTeeBoxSelect();
+
+
+
+// Function to update table header with selected course and tee
+function updateTableHeader() {
+  const selectedCourseIndex = document.getElementById('course-select').value;
+  const selectedTeeIndex = document.getElementById('tee-box-select').value;
+
+  const selectedCourseName = courses.find(course => course.id === parseInt(selectedCourseIndex)).name;
+  const selectedTeeType = teeBoxes[selectedTeeIndex].teeType.toUpperCase();
+
+  const tableHeaders = document.querySelectorAll('th');
+  tableHeaders.forEach(header => {
+    header.textContent = `${selectedCourseName} - ${selectedTeeType}`;
+  });
+}
+
+document.getElementById('course-select').addEventListener('change', updateTableHeader);
+document.getElementById('tee-box-select').addEventListener('change', updateTableHeader);
+
+
+updateTableHeader();
+
+
+
+// Function to populate the yardage for each color to each labeled hole
+function populateYardage() {
+  const selectedCourseIndex = document.getElementById('course-select').value;
+  const selectedTeeIndex = document.getElementById('tee-box-select').value;
+
+  // Retrieve the yardage data for the selected course and tee
+  const selectedCourse = courses.find(course => course.id === parseInt(selectedCourseIndex));
+  const selectedTee = teeBoxes[selectedTeeIndex];
+
+  // Assuming you have hole yardage data available for each tee color
+  const holeYardages = selectedCourse.holeYardages[selectedTee.teeType.toLowerCase()];
+
+  // Iterate over the table cells for yardage and populate with the respective yardage data
+  const yardageCells = document.querySelectorAll('td[data-label="Yardage"]');
+  yardageCells.forEach((cell, index) => {
+    cell.textContent = holeYardages[index]; // Assuming holeYardages is an array of yardages
+  });
+}
+
+// Call populateYardage initially and whenever course or tee selection changes
+document.getElementById('course-select').addEventListener('change', populateYardage);
+document.getElementById('tee-box-select').addEventListener('change', populateYardage);
+
+// Call populateYardage initially to set the yardage for the default course and tee
+populateYardage();

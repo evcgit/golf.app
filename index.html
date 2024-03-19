@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Golf Scorecard</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 <body class="bg-gray-100">
   <div class="container mx-auto">
@@ -26,28 +27,130 @@
     <div id="scorecard-container">
       <div id="scorecard">
         <div class="mb-6">
-          <table class="w-full table-auto border-collapse border border-gray-400">
+          <table class="w-full border border-gray-400">
             <thead class="bg-gray-200">
               <tr>
-                <th>Hole</th>
-                <!-- Front nine holes will be dynamically generated here -->
+                <th colspan="10">{golf course name}</th>
+                
               </tr>
             </thead>
             <tbody>
-              <!-- Front nine holes will be dynamically generated here -->
+              <!-- Front nine holes will be generated here -->
+              <tr>
+                <td class="border border-gray-400 w-1/6 text-center">Hole</td>
+                <td class="border border-gray-400 text-center">1</td>
+                <td class="border border-gray-400 text-center">2</td>
+                <td class="border border-gray-400 text-center">3</td>
+                <td class="border border-gray-400 text-center">4</td>
+                <td class="border border-gray-400 text-center">5</td>
+                <td class="border border-gray-400 text-center">6</td>
+                <td class="border border-gray-400 text-center">7</td>
+                <td class="border border-gray-400 text-center">8</td>
+                <td class="border border-gray-400 text-center">9</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-400 w-1/6 text-center">Yardage</td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                
+              </tr>
+              <tr>
+                <td class="border border-gray-400 w-1/6 text-center">Par</td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                
+              </tr>
+              <tr>
+                <td class="border border-gray-400 w-1/6 text-center">Handicap</td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                
+              </tr>
             </tbody>
           </table>
         </div>
         <div class="mb-6">
-          <table class="w-full table-auto border-collapse border border-gray-400">
+          <table class="w-full border border-gray-400">
             <thead class="bg-gray-200">
               <tr>
-                <th>Hole</th>
-                <!-- Back nine holes will be dynamically generated here -->
+                <th colspan="10">{golf course name}</th>
+                
               </tr>
             </thead>
             <tbody>
-              <!-- Back nine holes will be dynamically generated here -->
+              <!-- Back nine holes will be generated here -->
+              <tr>
+                <td class="border border-gray-400 w-1/6 text-center">Hole</td>
+                <td class="border border-gray-400 text-center">10</td>
+                <td class="border border-gray-400 text-center">11</td>
+                <td class="border border-gray-400 text-center">12</td>
+                <td class="border border-gray-400 text-center">13</td>
+                <td class="border border-gray-400 text-center">14</td>
+                <td class="border border-gray-400 text-center">15</td>
+                <td class="border border-gray-400 text-center">16</td>
+                <td class="border border-gray-400 text-center">17</td>
+                <td class="border border-gray-400 text-center">18</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-400 w-1/6 text-center">Yardage</td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                
+              </tr>
+              <tr>
+                <td class="border border-gray-400 w-1/6 text-center">Par</td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                
+              </tr>
+              <tr>
+                <td class="border border-gray-400 w-1/6 text-center">Handicap</td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                <td class="border border-gray-400 text-center"></td>
+                
+              </tr>
             </tbody>
           </table>
         </div>
@@ -55,6 +158,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  
 </body>
 </html>
