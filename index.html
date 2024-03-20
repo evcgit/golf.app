@@ -19,7 +19,7 @@
           <select class="form-select" id="course-select"></select>
         </div>
         <div class="mb-4">
-          <label for="tee-box-select" class="block">Select Tee Box</label>
+          <label for="tee-box-select" class="block">Select Tee Type</label>
           <select class="form-select" id="tee-box-select"></select>
         </div>
       </div>
@@ -30,14 +30,14 @@
           <table class="w-full border border-gray-400">
             <thead class="bg-gray-200">
               <tr>
-                <th colspan="10">{golf course name}</th>
-                
+                <th colspan="10" id="course-name-header">Selected Golf Course - Tee Type</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Front nine holes will be generated here -->
+              <!-- Front nine holes -->
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Hole</td>
+                <!-- Front nine holes -->
                 <td class="border border-gray-400 text-center">1</td>
                 <td class="border border-gray-400 text-center">2</td>
                 <td class="border border-gray-400 text-center">3</td>
@@ -50,42 +50,42 @@
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Yardage</td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                
+                <!-- Front nine holes -->
+                <td class="border border-gray-400 text-center" id="yardage-hole-1"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-2"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-3"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-4"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-5"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-6"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-7"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-8"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-9"></td>
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Par</td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                
+                <!-- Front nine holes -->
+                <td class="border border-gray-400 text-center" id="par-hole-1"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-2"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-3"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-4"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-5"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-6"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-7"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-8"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-9"></td>
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Handicap</td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                
+                <!-- Front nine holes -->
+                <td class="border border-gray-400 text-center" id="handicap-hole-1"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-2"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-3"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-4"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-5"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-6"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-7"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-8"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-9"></td>
               </tr>
             </tbody>
           </table>
@@ -94,14 +94,14 @@
           <table class="w-full border border-gray-400">
             <thead class="bg-gray-200">
               <tr>
-                <th colspan="10">{golf course name}</th>
-                
+                <th colspan="10">Back Nine Holes</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Back nine holes will be generated here -->
+              <!-- Back nine holes -->
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Hole</td>
+                <!-- Back nine holes -->
                 <td class="border border-gray-400 text-center">10</td>
                 <td class="border border-gray-400 text-center">11</td>
                 <td class="border border-gray-400 text-center">12</td>
@@ -114,42 +114,42 @@
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Yardage</td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                
+                <!-- Front nine holes -->
+                <td class="border border-gray-400 text-center" id="yardage-hole-10"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-11"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-12"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-13"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-14"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-15"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-16"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-17"></td>
+                <td class="border border-gray-400 text-center" id="yardage-hole-18"></td>
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Par</td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                
+                <!-- Front nine holes -->
+                <td class="border border-gray-400 text-center" id="par-hole-10"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-11"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-12"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-13"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-14"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-15"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-16"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-17"></td>
+                <td class="border border-gray-400 text-center" id="par-hole-18"></td>
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Handicap</td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
-                <td class="border border-gray-400 text-center"></td>
                 
+                <td class="border border-gray-400 text-center" id="handicap-hole-10"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-11"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-12"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-13"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-14"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-15"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-16"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-17"></td>
+                <td class="border border-gray-400 text-center" id="handicap-hole-18"></td>
               </tr>
             </tbody>
           </table>
@@ -157,7 +157,6 @@
       </div>
     </div>
   </div>
-
-  
 </body>
 </html>
+
