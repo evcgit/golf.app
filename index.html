@@ -8,7 +8,7 @@
   <script defer src="script.js"></script>
 </head>
 <body class="bg-gray-100">
-  <div class="container mx-auto">
+  <div class="container mx-auto overflow-x-auto">
     <div class="mb-6 text-center">
       <h1 class="text-3xl font-bold">Golf Scorecard App</h1>
     </div>
@@ -27,7 +27,7 @@
     <div id="scorecard-container">
       <div id="scorecard">
         <div class="mb-6">
-          <table class="w-full border border-gray-400">
+          <table class="w-full border border-gray-400" id="scorecard-front">
             <thead class="bg-gray-200">
               <tr>
                 <th colspan="10" id="course-name-header">Selected Golf Course - Tee Type</th>
@@ -37,7 +37,6 @@
               <!-- Front nine holes -->
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Hole</td>
-                <!-- Front nine holes -->
                 <td class="border border-gray-400 text-center">1</td>
                 <td class="border border-gray-400 text-center">2</td>
                 <td class="border border-gray-400 text-center">3</td>
@@ -50,7 +49,6 @@
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Yardage</td>
-                <!-- Front nine holes -->
                 <td class="border border-gray-400 text-center" id="yardage-hole-1"></td>
                 <td class="border border-gray-400 text-center" id="yardage-hole-2"></td>
                 <td class="border border-gray-400 text-center" id="yardage-hole-3"></td>
@@ -63,7 +61,6 @@
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Par</td>
-                <!-- Front nine holes -->
                 <td class="border border-gray-400 text-center" id="par-hole-1"></td>
                 <td class="border border-gray-400 text-center" id="par-hole-2"></td>
                 <td class="border border-gray-400 text-center" id="par-hole-3"></td>
@@ -76,7 +73,6 @@
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Handicap</td>
-                <!-- Front nine holes -->
                 <td class="border border-gray-400 text-center" id="handicap-hole-1"></td>
                 <td class="border border-gray-400 text-center" id="handicap-hole-2"></td>
                 <td class="border border-gray-400 text-center" id="handicap-hole-3"></td>
@@ -91,7 +87,7 @@
           </table>
         </div>
         <div class="mb-6">
-          <table class="w-full border border-gray-400">
+          <table class="w-full border border-gray-400" id="scorecard-back">
             <thead class="bg-gray-200">
               <tr>
                 <th colspan="10">Back Nine Holes</th>
@@ -101,7 +97,6 @@
               <!-- Back nine holes -->
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Hole</td>
-                <!-- Back nine holes -->
                 <td class="border border-gray-400 text-center">10</td>
                 <td class="border border-gray-400 text-center">11</td>
                 <td class="border border-gray-400 text-center">12</td>
@@ -114,7 +109,6 @@
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Yardage</td>
-                <!-- Front nine holes -->
                 <td class="border border-gray-400 text-center" id="yardage-hole-10"></td>
                 <td class="border border-gray-400 text-center" id="yardage-hole-11"></td>
                 <td class="border border-gray-400 text-center" id="yardage-hole-12"></td>
@@ -127,7 +121,6 @@
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Par</td>
-                <!-- Front nine holes -->
                 <td class="border border-gray-400 text-center" id="par-hole-10"></td>
                 <td class="border border-gray-400 text-center" id="par-hole-11"></td>
                 <td class="border border-gray-400 text-center" id="par-hole-12"></td>
@@ -140,7 +133,6 @@
               </tr>
               <tr>
                 <td class="border border-gray-400 w-1/6 text-center">Handicap</td>
-                
                 <td class="border border-gray-400 text-center" id="handicap-hole-10"></td>
                 <td class="border border-gray-400 text-center" id="handicap-hole-11"></td>
                 <td class="border border-gray-400 text-center" id="handicap-hole-12"></td>
@@ -156,6 +148,10 @@
         </div>
       </div>
     </div>
+    <div id="add-player-section" class="mb-6">
+      <input type="text" id="player-name-input" placeholder="Enter player's name">
+      <button id="add-player-button" class="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Player</button>
+  </div>
   </div>
 </body>
 </html>
