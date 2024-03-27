@@ -76,6 +76,17 @@ function populateScorecard(courseId, teeType) {
 populateCourseSelect();
 
 
+// Function to calculate and display the total score for each player
+function calculateTotalScore(playerName) {
+  let totalScore = 0;
+  for (let i = 1; i <= 18; i++) {
+    const score = parseInt(document.getElementById(`hole-${i}-${playerName}`).value) || 0;
+    totalScore += score;
+  }
+  document.getElementById(`total-${playerName}`).textContent = totalScore;
+}
+
+
 
 
 // Function to add a new player row to both front and back tables
@@ -91,21 +102,39 @@ function addPlayerRow() {
   const newRowFront = document.createElement('tr');
   newRowFront.innerHTML = `<td class="border border-gray-400 text-center">${playerName}</td>`;
   for (let i = 1; i <= 9; i++) {
-      newRowFront.innerHTML += `<td><input class="border border-gray-400 text-center" type="number" min="0" id="front-${i}-player-${playerName}" /></td>`;
+      newRowFront.innerHTML += `<td><input class="border border-gray-400 text-center w-full player-score-input" type="number" min="0" id="hole-${i}-${playerName}" /></td>`;
   }
   frontTableBody.appendChild(newRowFront);
+  
+  
 
   // Back nine table
   const backTableBody = document.getElementById('scorecard-back').querySelector('table tbody');
   const newRowBack = document.createElement('tr');
   newRowBack.innerHTML = `<td class="border border-gray-400 text-center">${playerName}</td>`;
-  for (let i = 1; i <= 9; i++) {
-      newRowBack.innerHTML += `<td><input class="border border-gray-400 text-center" type="number" min="0" id="back-${i}-player-${playerName}" /></td>`;
+  for (let i = 10; i <= 18; i++) {
+      newRowBack.innerHTML += `<td><input class="border border-gray-400 text-center w-full player-score-input" type="number" min="0" id="hole-${i}-${playerName}" /></td>`;
   }
   backTableBody.appendChild(newRowBack);
   document.getElementById('player-name-input').value = '';
-}
-
-document.getElementById('add-player-button').addEventListener('click', addPlayerRow);
 
 
+  const totalsTableBody = document.getElementById('scoreTotals').querySelector('tbody');
+  const playerRow = document.createElement('tr');
+  playerRow.innerHTML = `<td class="border border-gray-400 text-center">${playerName}</td><td class="border border-gray-400 text-center" id="total-${playerName}">0</td>`;
+  totalsTableBody.appendChild(playerRow);
+  
+  document.getElementById('player-name-input').value = '';
+
+  // Select all input fields with the class 'player-score-input'
+  const scoreInputs = document.querySelectorAll('.player-score-input');
+  scoreInputs.forEach(input => {
+    input.addEventListener('input', function(event) {
+      const playerName = event.target.id.split('-')[2];
+      calculateTotalScore(playerName);
+    });
+  });
+
+  }
+  
+  document.getElementById('add-player-button').addEventListener('click', addPlayerRow);
